@@ -9,6 +9,7 @@ use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\Trademarks\TrademarksService;
 use App\Services\Trademarks\TrademarksServiceInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
@@ -59,7 +60,7 @@ class ShopController extends Controller
   {
     $categories = $this->productCategoryService->all();
     $trademarks = $this->trademarksService->all();
-    
+
     $products = $this->productService->getProductByCategory($categoryName, $request);
     return view('front.shop.index', compact( 'products', 'categories', 'trademarks'));
   }

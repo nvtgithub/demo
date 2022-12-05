@@ -16,7 +16,8 @@
               <tr>
                 <th>Hình ảnh</th>
                 <th class="p-name text-center">Tên sản phẩm</th>
-                <th>Giá</th>
+                <th class="p-name text-center">Màu sắc</th>
+                <th>Giá bán</th>
                 <th>Số lượng</th>
                 <th>Thành tiền</th>
                 <th>
@@ -31,8 +32,11 @@
                   <img width="100%" src="front/img/products/{{ $cart->options->images[0]->path }}" alt="">
                 </td>
                 <td class="cart-title first-row text-center">
-                  <h5>{{ $cart->name }} {{ $cart->color }}</h5>
+                  <h5>{{ $cart->name }}</h5>
                 </td>
+                  <td class="cart-title first-row text-center">
+                      <h5>{{ $cart->options->colorProduct->color }}</h5>
+                  </td>
                 <td class="p-price first-row">{{ number_format($cart->price) }} VNĐ</td>
                 <td class="qua-col first-row">
                   <div class="quantity">
@@ -41,9 +45,9 @@
                     </div>
                   </div>
                 </td>
-                <td class="total-price first-row">{{ number_format($cart->price) }} VNĐ</td>
+                <td class="total-price first-row">{{ number_format($cart->price * $cart->qty) }} VNĐ</td>
                 <td class="close-td first-row">
-                  <i onclick="removeCart('{{ $cart->rowId }}')" class="ti-close"></i>
+                  <i onclick="removeCart('{{ $cart->rowId }}', '{{$cart->name}}')" class="ti-close"></i>
                 </td>
               </tr>
               @endforeach
@@ -63,8 +67,8 @@
           <div class="col-lg-4 offset-lg-4">
             <div class="proceed-checkout">
               <ul>
-                <li class="subtotal">Thành tiền <span>{{ $total }}</span></li>
-                <li class="cart-total">Tổng tiền <span>{{ $subtotal }}</span></li>
+                <li class="subtotal">Thành tiền <span class="subtotal-money">{{ $total }} VNĐ</span></li>
+                <li class="cart-total">Tổng tiền <span class="cart-total-money">{{ $subtotal }} VNĐ</span></li>
               </ul>
               <a href="./checkout" class="proceed-btn">Tiến hành thanh toán</a>
             </div>

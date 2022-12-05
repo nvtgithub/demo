@@ -37,7 +37,7 @@ class CheckOutController extends Controller
 
   public function addOrder(Request $request)
   {
-    //01. Thêm đơn hàng 
+    //01. Thêm đơn hàng
     $data = $request->all();
     $data['status'] = Constant::order_status_ReceiveOrders;
     $order =  $this->orderService->create($data);
@@ -52,6 +52,7 @@ class CheckOutController extends Controller
         'qty' => $cart->qty,
         'price' => $cart->price,
         'total' => $cart->qty * $cart->price,
+        'product_detail_id' => $cart->options->colorProduct->id
       ];
 
       $this->orderDetailService->create($data);

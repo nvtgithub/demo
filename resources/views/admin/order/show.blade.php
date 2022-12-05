@@ -34,6 +34,8 @@
               <thead>
                 <tr>
                   <th>Sản phẩm</th>
+                  <th>Màu sắc</th>
+                  <th>Tên màu</th>
                   <th class="text-center">Số lượng</th>
                   <th class="text-center">Giá sản phẩm</th>
                   <th class="text-center">Tổng tiền</th>
@@ -56,10 +58,20 @@
                       </div>
                     </div>
                   </td>
+                    <td>
+                        <div class="box-color"
+                             style="width: 50px;
+                            height: 20px;
+                            background: {{$orderDetail->productDetail->color_code}}">
+                        </div>
+                    </td>
+                    <td>
+                        {{ $orderDetail->productDetail->color }}
+                    </td>
                   <td class="text-center">
                     {{ $orderDetail->qty }}
                   </td>
-                  <td class="text-center">{{ number_format($orderDetail->price,0, '.', '.' ) }}</td>
+                  <td class="text-center">{{ number_format($orderDetail->price,0, '.', '.' ) }} VNĐ</td>
                   <td class="text-center">
                     {{ number_format($orderDetail->total,0, '.', '.' )}} VNĐ
                   </td>
@@ -68,8 +80,6 @@
               </tbody>
             </table>
           </div>
-
-
 
           <h2 class="text-center mt-5">Thông tin khách hàng</h2>
           <hr>
@@ -146,7 +156,7 @@
           <div class="position-relative row form-group">
             <label for="payment_type" class="col-md-3 text-md-right col-form-label">Ngày đặt hàng</label>
             <div class="col-md-9 col-xl-8">
-              <p>{{ DATE_FORMAT($order->created_at, 'd-m-Y H:i:s') }}</p>      
+              <p>{{ DATE_FORMAT($order->created_at, 'd-m-Y H:i:s') }}</p>
             </div>
           </div>
 
@@ -158,19 +168,9 @@
                   @csrf
                   @method('PUT')
                   <select required name="status" id="status" class="badge badge-dark">
-                    <option> {{ \App\Utilities\Constant::$order_status[$order->status] }}</option>
-                    <option value="0">Đơn hàng bị hủy</option>
-                    <option value="1">Nhận đơn đặt hàng</option>
-                    <option value="2">Chưa xác nhận đơn hàng</option>
-                    <option value="3">Đã xác nhận đơn hàng</option>
-                    <option value="4">Đã thanh toán</option>
-                    <option value="5">Đơn hàng đang được xử lý</option>
-                    <option value="6">Đang giao hàng</option>
-                    <option value="7">Đã hoàn thành</option>
-
-                    <!-- @foreach (\App\Utilities\Constant::$order_status as $order_status)
-                    <option value="">{{$order_status}}</option>
-                    @endforeach -->
+                    @foreach (\App\Utilities\Constant::$order_status as $key => $order_status)
+                        <option value="{{$key}}" {{$key == $order->status? 'selected' : ''}}>{{ $order_status}}</option>
+                    @endforeach
                   </select>
 
                   <button type="submit" class="btn btn-primary">Cập nhật</button>

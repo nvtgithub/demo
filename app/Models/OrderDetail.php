@@ -22,4 +22,9 @@ class OrderDetail extends Model
     {
         return $this->belongsTo(Product::class,'product_id','id');
     }
+
+    public function productDetail()
+    {
+        return $this->belongsTo(ProductDetail::class,'product_detail_id','id');
+    }
 }

@@ -7,7 +7,7 @@
     <div class="checkout-section spad">
         <div class="container">
             <form action="" method="post" class="checkout-form">
-            @csrf    
+            @csrf
             <div class="row">
 
                 @if(Cart::count() > 0)
@@ -54,7 +54,7 @@
                             <div class="col-lg-6">
                                 <label for="phone">Số điện thoại <span>*</span></label>
                                 <input name="phone" type="text" id="phone" value="{{ Auth::user()->phone ?? '' }}" required>
-                            </div>                  
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -69,8 +69,8 @@
 
                                     @foreach($carts as $cart)
                                         <li class="fw-normal">
-                                            {{ $cart->name }} x {{ $cart->qty }}
-                                            <span>{{ $cart->price * $cart->qty }} VNĐ</span>
+                                            {{ $cart->name }} - {{ $cart->options->colorProduct->color }} x {{ $cart->qty }}
+                                            <span>{{ number_format($cart->price * $cart->qty ) }} VNĐ</span>
                                         </li>
                                     @endforeach
                                     <li class="fw-normal">Thành tiền <span>{{ $subtotal }} VNĐ</span></li>
