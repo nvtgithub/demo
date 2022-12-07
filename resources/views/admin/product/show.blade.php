@@ -16,12 +16,23 @@
         <div>
           Sản phẩm
           <div class="page-title-subheading">
-          Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
+            Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+    <li class="nav-item">
+      <a href="./admin/product" class="nav-link">
+        <span class="btn-icon-wrapper pr-2 opacity-8">
+          <i class="fa fa-chevron-circle-left"></i>
+        </span>
+        <span>Quay lại</span>
+      </a>
+    </li>
+  </ul>
 
   <div class="row">
     <div class="col-md-12">

@@ -29,7 +29,7 @@
         <div class="card-body">
           <form method="post" action="admin/product" enctype="multipart/form-data">
             @csrf
-                    @include('admin.components.notification')
+            @include('admin.components.notification')
             <div class="position-relative row form-group">
               <label for="trademark_id" class="col-md-3 text-md-right col-form-label">Thương hiệu</label>
               <div class="col-md-9 col-xl-8">
@@ -74,7 +74,7 @@
               <div class="col-md-9 col-xl-8">
                 <textarea required name="content" id="content" placeholder="Nội dung sản phẩm" type="text" class="form-control" value=""></textarea>
               </div>
-              
+
             </div>
 
             <div class="position-relative row form-group">
@@ -129,22 +129,20 @@
               </div>
             </div>
 
-            <div class="position-relative row form-group mb-1">
-              <div class="col-md-9 col-xl-8 offset-md-2">
-                <a href="./admin/product" class="border-0 btn btn-outline-danger mr-1">
-                  <span class="btn-icon-wrapper pr-1 opacity-8">
-                    <i class="fa fa-times fa-w-20"></i>
-                  </span>
-                  <span>Hủy</span>
-                </a>
+            <div class="position-relative row form-group mb-1 d-flex justify-content-center">
+              <a href="./admin/product" class="border-0 btn btn-outline-danger mr-1">
+                <span class="btn-icon-wrapper pr-1 opacity-8">
+                  <i class="fa fa-times fa-w-20"></i>
+                </span>
+                <span>Hủy</span>
+              </a>
 
-                <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
-                  <span class="btn-icon-wrapper pr-2 opacity-8">
-                    <i class="fa fa-download fa-w-20"></i>
-                  </span>
-                  <span>Lưu</span>
-                </button>
-              </div>
+              <button type="submit" class="btn-shadow btn-hover-shine btn btn-primary">
+                <span class="btn-icon-wrapper pr-2 opacity-8">
+                  <i class="fa fa-download fa-w-20"></i>
+                </span>
+                <span>Lưu</span>
+              </button>
             </div>
           </form>
         </div>

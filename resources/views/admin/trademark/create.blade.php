@@ -35,8 +35,7 @@
               </div>
             </div>
 
-            <div class="position-relative row form-group mb-1">
-              <div class="col-md-9 col-xl-8 offset-md-2">
+            <div class="position-relative row form-group mb-1 d-flex justify-content-center">
                 <a href="./admin/trademark" class="border-0 btn btn-outline-danger mr-1">
                   <span class="btn-icon-wrapper pr-1 opacity-8">
                     <i class="fa fa-times fa-w-20"></i>
@@ -50,7 +49,6 @@
                   </span>
                   <span>Lưu</span>
                 </button>
-              </div>
             </div>
           </form>
         </div>

@@ -22,6 +22,17 @@
     </div>
   </div>
 
+  <ul class="body-tabs body-tabs-layout tabs-animated body-tabs-animated nav">
+    <li class="nav-item">
+      <a href="./admin/order" class="nav-link">
+        <span class="btn-icon-wrapper pr-2 opacity-8">
+          <i class="fa fa-chevron-circle-left"></i>
+        </span>
+        <span>Quay lại</span>
+      </a>
+    </li>
+  </ul>
+
   <div class="row">
     <div class="col-md-12">
       <div class="main-card mb-3 card">
@@ -58,16 +69,15 @@
                       </div>
                     </div>
                   </td>
-                    <td>
-                        <div class="box-color"
-                             style="width: 50px;
+                  <td>
+                    <div class="box-color" style="width: 50px;
                             height: 20px;
                             background: {{$orderDetail->productDetail->color_code}}">
-                        </div>
-                    </td>
-                    <td>
-                        {{ $orderDetail->productDetail->color }}
-                    </td>
+                    </div>
+                  </td>
+                  <td>
+                    {{ $orderDetail->productDetail->color }}
+                  </td>
                   <td class="text-center">
                     {{ $orderDetail->qty }}
                   </td>
@@ -169,7 +179,7 @@
                   @method('PUT')
                   <select required name="status" id="status" class="badge badge-dark">
                     @foreach (\App\Utilities\Constant::$order_status as $key => $order_status)
-                        <option value="{{$key}}" {{$key == $order->status? 'selected' : ''}}>{{ $order_status}}</option>
+                    <option value="{{$key}}" {{$key == $order->status? 'selected' : ''}}>{{ $order_status}}</option>
                     @endforeach
                   </select>
 
