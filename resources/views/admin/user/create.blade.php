@@ -13,7 +13,7 @@
                 <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
             </div>
             <div>
-                User
+                Người dùng
                 <div class="page-title-subheading">
                     Xem, tạo mới, cập nhật, xóa và quản lý.
                 </div>

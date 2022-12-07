@@ -12,7 +12,7 @@
           <i class="pe-7s-ticket icon-gradient bg-mean-fruit"></i>
         </div>
         <div>
-          Order
+          Đơn hàng
           <div class="page-title-subheading">
             Xem chi tiết, tạo mới, cập nhật, xóa và quản lý.
           </div>
@@ -45,8 +45,8 @@
               <thead>
                 <tr>
                   <th>Sản phẩm</th>
-                  <th>Màu sắc</th>
-                  <th>Tên màu</th>
+                  <th class="text-center">Màu sắc</th>
+                  <th class="text-center">Tên màu</th>
                   <th class="text-center">Số lượng</th>
                   <th class="text-center">Giá sản phẩm</th>
                   <th class="text-center">Tổng tiền</th>
@@ -71,11 +71,12 @@
                   </td>
                   <td>
                     <div class="box-color" style="width: 50px;
+                            margin: auto;
                             height: 20px;
                             background: {{$orderDetail->productDetail->color_code}}">
                     </div>
                   </td>
-                  <td>
+                  <td class="text-center">
                     {{ $orderDetail->productDetail->color }}
                   </td>
                   <td class="text-center">
