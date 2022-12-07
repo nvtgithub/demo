@@ -38,10 +38,17 @@
                     </div>
 
                     <div class="position-relative row form-group">
-                        <label for="color" class="col-md-3 text-md-right col-form-label">Màu</label>
+                        <label for="color" class="col-md-3 text-md-right col-form-label">Tên màu</label>
                         <div class="col-md-9 col-xl-8">
                             <input required name="color" id="color" placeholder="Color" type="text"
                                 class="form-control" value="">
+                        </div>
+                    </div>
+
+                    <div class="position-relative row form-group">
+                        <label for="color" class="col-md-3 text-md-right col-form-label">Mã màu</label>
+                        <div class="col-md-9 col-xl-8">
+                            <input type="color" class="form-control-color" id="color" name="color_code" value="#563d7c" title="Chọn 1 màu">
                         </div>
                     </div>
 

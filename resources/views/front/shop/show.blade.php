@@ -2,6 +2,10 @@
 
 @section('title', 'Product')
 
+@section('script')
+    <script src="front/js/cart.js"></script>
+@endsection
+
 @section('body')
 <!-- Product Shop Section Begin -->
 <section class="product-shop spad page-details">
@@ -35,7 +39,7 @@
             <div class="product-details">
               <div class="pd-title">
                 <span>{{ $product->tag }}</span>
-                <h3>{{ $product->name }}</h3>
+                <h3 class="d-flex">{{ $product->name }} <div class="ml-1" id="product-color"></div></h3>
                 <a href="#" class="heart-icon">
                   <i class="icon_heart_alt"></i>
                 </a>
@@ -61,17 +65,25 @@
               </div>
               <div class="pd-color">
                 <h6>Màu sắc</h6>
-                <div class="pd-color-choose">
-                  @foreach(array_unique(array_column($product->productDetails->toArray(), 'color')) as $productColor)
+                <div id="choose-color" class="pd-color-choose">
+                @foreach($product->productDetails->toArray() as $productColor)
                   <div class="cc-item">
-                    <input type="radio" id="cc-{{ $productColor }}">
-                    <label for="cc-{{ $productColor }}" class="cc-{{ $productColor }}" data-value="{{ $productColor }}" data-inwptooltip="{{ $productColor }}"></label>
+                    <input type="radio" name="color"  data-color-name="{{ $productColor['color'] }}" id="cc-{{ $productColor['color'] }}" value="{{$productColor['id']}}">
+                    <label for="cc-{{ $productColor['color'] }}"
+                           class="cc-{{ $productColor['color'] }}"
+                           data-value="{{ $productColor['color'] }}"
+                           data-inwptooltip="{{ $productColor['color'] }}"
+                           style="background: {{$productColor['color_code']}}"
+                    ></label>
                   </div>
                   @endforeach
                 </div>
               </div>
               <div class="quantity">
-                <a href="javascript:addCart({{ $product->id }})" class="primary-btn pd-cart">Thêm vào giỏ hàng</a>
+                <button data-product-id="{{ $product->id }}"
+                   class="primary-btn pd-cart" id="add-to-cart">
+                    Thêm vào giỏ hàng
+                </button>
               </div>
               <ul class="pd-tags">
                 <li><span>Loại sản phẩm</span>: {{ $product->productCategory->name }}</li>

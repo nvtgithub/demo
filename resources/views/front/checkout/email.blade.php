@@ -119,7 +119,7 @@
                                         {{ $orderDetail->product->name . ' (x' . $orderDetail->qty . ')'}}
                                     </td>
                                     <td style="border-top: 1px solid #dee2e6; padding: 5px 20px 5px 0; text-align: right;">
-                                        {{ $orderDetail->total }} VNĐ
+                                        {{ number_format($orderDetail->total) }} VNĐ
                                     </td>
                                 </tr>
                             @endforeach

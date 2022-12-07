@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\ProductDetail;
 use App\Services\Product\ProductService;
 use App\Services\ProductCategory\ProductCategoryServiceInterface;
 use App\Services\Product\ProductServiceInterface;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Log;
 
 class CartController extends Controller
 {
@@ -31,10 +33,9 @@ class CartController extends Controller
 
   public function add(Request $request)
   {
-    
+
     if ($request->ajax()) {
       $product = $this->productService->find($request->productId);
-      
 
       $response['cart'] = Cart::add([
         'id' => $product->id,
@@ -44,6 +45,7 @@ class CartController extends Controller
         'weight' => $product->weight ?? 0,
         'options' => [
           'images' => $product->productImages,
+          'colorProduct' => ProductDetail::find($request->color),
         ],
       ]);
 

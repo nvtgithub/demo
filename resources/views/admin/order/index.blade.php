@@ -82,9 +82,9 @@
                                                                 <div class="widget-subheading opacity-7">
 
                                                                     {{ $order->orderDetails[0]->product->name }}
-
+                                                                    - {{$order->orderDetails[0]->productDetail?$order->orderDetails[0]->productDetail->color: ''}}
                                                                     @if(count($order->orderDetails) > 1)
-                                                                        (và {{ count($order->orderDetails )}} sản phẩm khác)
+                                                                        (và {{ count($order->orderDetails ) - 1}} sản phẩm khác)
                                                                     @endif
 
                                                                 </div>

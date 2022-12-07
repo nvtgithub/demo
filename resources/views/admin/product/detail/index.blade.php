@@ -63,6 +63,7 @@
                                             <tr>
                                                 <th class="pl-4">Tên sản phẩm</th>
                                                 <th>Màu sắc</th>
+                                                <th>Tên màu</th>
                                                 <th>Số lượng</th>
                                                 <th class="text-center">Hành động</th>
                                             </tr>
@@ -73,9 +74,16 @@
                                             <tr>
                                                 <td class="pl-4 text-muted">{{ $product->name }}</td>
 
+                                                <td class="">
+                                                    <div class="box-color"
+                                                         style="width: 50px;
+                                                        height: 20px;
+                                                        background: {{$productDetail->color_code}}">
+                                                   </div>
+                                                </td>
                                                 <td class="">{{ $productDetail->color }}</td>
                                                 <td class="">{{ $productDetail->qty }}</td>
-                                                
+
                                                 <td class="text-center">
                                                     <a href="./admin/product/{{ $product->id }}/detail/{{ $productDetail->id }}/edit" data-toggle="tooltip" title="Edit"
                                                         data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
@@ -99,7 +107,7 @@
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            
+
                                         </tbody>
                                     </table>
                                 </div>
