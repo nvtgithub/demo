@@ -39,7 +39,7 @@
         <div class="ht-left">
           <div class="mail-service">
             <i class="fa fa-envelope ">
-            electronicstorek64cnpm@gmail.com</i>
+              electronicstorek64cnpm@gmail.com</i>
           </div>
           <div class="phone-service">
             <i class="fa fa-phone"><span class="ml-2">0865892696</span> </i>
@@ -104,7 +104,7 @@
                 </a>
                 <div class="cart-hover">
                   <div class="select-items" style="max-height: 250px; overflow-y: scroll;">
-                    <table >
+                    <table>
                       <tbody id="show_product_favorite">
 
                       </tbody>
@@ -126,7 +126,7 @@
                           <td class="si-pic"><img width="70px" src="front/img/products/{{ $cart->options->images[0]->path }}" alt=""></td>
                           <td class="si-text">
                             <div class="product-selected">
-                              <h6>{{ $cart->name }} <span> -  {{$cart->options['colorProduct']->color}} </span></h6>
+                              <h6>{{ $cart->name }} <span> - {{$cart->options['colorProduct']->color}} </span></h6>
                               <p>{{ number_format($cart->price) }} VNĐ x {{ $cart->qty }}</p>
                             </div>
                           </td>
@@ -173,19 +173,19 @@
             </ul>
           </div>
         </div>
-        <nav class="nav-menu mobile-menu" style="float: right;">
+        <nav class="nav-menu mobile-menu">
           <ul>
             <li class="{{ (request()->segment(1) == '') ? 'active' : '' }}"><a href="./">Trang chủ</a></li>
             <li class="{{ (request()->segment(1) == 'shop') ? 'active' : '' }}"><a href="./shop">Shop</a></li>
-            <li class="{{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="./contact">Thông tin</a></li>
             <li><a href="">Trang</a>
               <ul class="dropdown">
                 <li><a href="./account/my-order">Đơn hàng của tôi</a></li>
-                <li><a href="./account/my-contact">Thông tin cá nhân</a></li>
+                <li><a href="./account/my-contact/contactuser/{{ Auth::user()->id ?? '' }}">Thông tin cá nhân</a></li>
                 <li><a href="./checkout">Thanh toán</a></li>
                 <li><a href="account/register">Đăng ký</a></li>
               </ul>
             </li>
+            <li class="{{ (request()->segment(1) == 'contact') ? 'active' : '' }}"><a href="./contact">Liên hệ</a></li>
           </ul>
         </nav>
         <div id="mobile-menu-wrap">

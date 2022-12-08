@@ -56,7 +56,7 @@
         <div class="product-list">
           <div class="row">
             @foreach($products as $product)
-            <div class="col-lg-4 col-sm-6">
+            <div class="col-lg-4 col-sm-6 item-product-shop">
               @include('front.components.product-item')
             </div>
             @endforeach

@@ -1,4 +1,4 @@
-<div style="border-radius: 8px;" class="product-item item {{$product->tag}} shadow-sm p-3 ">
+<div style="border-radius: 8px; height: 100%;" class="product-item item {{$product->tag}} shadow-sm p-3 ">
   <div class="pi-pic">
     <img id="wishlist_productimage{{$product->id}}" src="front/img/products/{{ $product->productImages[0]->path ?? ''}}" alt="">
 
