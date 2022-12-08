@@ -1172,7 +1172,7 @@ ol {
 }
 
 .product-item:hover {
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
 }
 
 .product-item:hover .pi-pic .icon {
@@ -1191,7 +1191,7 @@ ol {
 
 .product-item .pi-pic img {
   min-width: 100%;
-  max-height: 193px;
+  max-height: 172px;
   object-fit: contain;
 }
 
@@ -1622,9 +1622,7 @@ ol {
   line-height: 26px;
 }
 
-.newslatter-item .subscribe-form {
-
-}
+.newslatter-item .subscribe-form {}
 
 .newslatter-item .subscribe-form input {
   font-size: 16px;
@@ -2244,8 +2242,8 @@ ol {
 
 .product-details .pd-color {
   margin-bottom: 25px;
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .product-details .pd-color h6 {
@@ -2256,24 +2254,24 @@ ol {
 }
 
 .product-details .pd-color .pd-color-choose {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .product-details .pd-color .pd-color-choose .cc-item {
   display: flex;
   margin-right: 10px;
   padding: 3px;
-    box-sizing: border-box;
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 50%;
 }
 
 .product-details .pd-color .pd-color-choose .cc-item input {
   position: absolute;
-    display: none;
-    height: 15px;
-    width: 15px;
+  display: none;
+  height: 15px;
+  width: 15px;
 }
 
 .product-details .pd-color .pd-color-choose .cc-item label {
@@ -2285,7 +2283,7 @@ ol {
 }
 
 .product-details .pd-color .pd-color-choose .cc-item input[type="radio"]:checked {
-    border: 5px solid ;
+  border: 5px solid;
 }
 
 .product-details .pd-size-choose {
@@ -4643,3 +4641,53 @@ ol {
   text-decoration: underline;
 }
 
+.com-users-profile__core legend {
+  border-bottom: 1px solid #E0E0E0;
+  color: #201F1E;
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+}
+
+.com-users-profile__core dt {
+  border-bottom: 1px dashed #E0E0E0;
+  color: #000;
+  font-weight: 500;
+  margin-top: 0;
+  margin: 0;
+  text-align: left;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.com-users-profile__core dt::after {
+  content: ':';
+  position: absolute;
+  right: 0;
+}
+
+.com-users-profile__core dd {
+  border-bottom: 1px dashed #E0E0E0;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.edit-profile {
+  position: relative;
+}
+
+.com-users-profile__core .btn-edit-profile {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.item-product-shop {
+  padding-bottom: 24px;
+}
